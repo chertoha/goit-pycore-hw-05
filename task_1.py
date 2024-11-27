@@ -20,21 +20,26 @@ def caching_fibonacci():
     return fibonacci
 
 
-fibonacci_fn = caching_fibonacci()
+def main():
+    fibonacci_fn = caching_fibonacci()
 
-while True:
-    value = input("Type number or 'exit' to quit\n")
+    while True:
+        value = input("Type number or 'exit' to quit\n")
 
-    if value == "exit":
-        break
+        if value == "exit":
+            break
 
-    try:
-        num = int(value)
+        try:
+            num = int(value)
 
-        res = fibonacci_fn(num)
-        print(f"Result: {res}")
+            res = fibonacci_fn(num)
+            print(f"Result: {res}")
 
-    except ValueError as err:
-        print("Wrong value!")
-    except Exception as err:
-        print("Something went wrong. Error: ", err)
+        except ValueError as err:
+            print("Wrong value!")
+        except Exception as err:
+            print("Something went wrong. Error: ", err)
+
+
+if __name__ == "__main__":
+    main()
